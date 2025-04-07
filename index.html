@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Blocks - Lego Music Notation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Lego Music Notation for the Blind</h1>
+    
+    <div class="container">
+        <div class="section">
+            <h2>Color to Note Mapping</h2>
+            <div class="color-mapping">
+                <div class="color-note-pair">
+                    <div class="color-swatch" style="background-color: rgb(255, 0, 0);"></div>
+                    <span>C4 (Red)</span>
+                </div>
+                <div class="color-note-pair">
+                    <div class="color-swatch" style="background-color: rgb(0, 0, 255);"></div>
+                    <span>D4 (Blue)</span>
+                </div>
+                <div class="color-note-pair">
+                    <div class="color-swatch" style="background-color: rgb(255, 255, 0);"></div>
+                    <span>E4 (Yellow)</span>
+                </div>
+                <div class="color-note-pair">
+                    <div class="color-swatch" style="background-color: rgb(0, 255, 0);"></div>
+                    <span>F4 (Green)</span>
+                </div>
+                <div class="color-note-pair">
+                    <div class="color-swatch" style="background-color: rgb(0, 0, 0);"></div>
+                    <span>G4 (Black)</span>
+                </div>
+                <div class="color-note-pair">
+                    <div class="color-swatch" style="background-color: rgb(255, 255, 255);"></div>
+                    <span>A4 (White)</span>
+                </div>
+                <div class="color-note-pair">
+                    <div class="color-swatch" style="background-color: rgb(255, 165, 0);"></div>
+                    <span>B4 (Orange)</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>1. Image Color to Music</h2>
+            <div class="input-section">
+                <label for="imageInput">Upload Lego image:</label>
+                <input type="file" id="imageInput" accept="image/*">
+            </div>
+            
+            <div class="interactive-area">
+                <canvas id="imageCanvas"></canvas>
+                <div id="turtle" class="turtle-simulator"></div>
+            </div>
+            
+            <div class="button-group">
+                <button id="scanImage">Scan Image</button>
+                <button id="playSequence">Play Music Sequence</button>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>2. Webcam Color to Music</h2>
+            <div class="interactive-area">
+                <video id="video" width="400" height="300" autoplay muted></video>
+                <canvas id="videoCanvas" style="display:none;"></canvas>
+            </div>
+            
+            <div class="button-group">
+                <button id="startWebcam">Start Webcam</button>
+                <button id="detectColorFromWebcam">Detect Lego Colors</button>
+                <button id="continuousScan">Start Continuous Scan</button>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>3. Create Your Own Lego Music</h2>
+            <p>Click on cells to change their color and create your own musical sequence</p>
+            
+            <div class="lego-grid" id="legoGrid"></div>
+            
+            <div class="button-group">
+                <button id="playCustomSequence">Play Custom Sequence</button>
+                <button id="clearGrid">Clear Grid</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="note-display" id="noteDisplay">
+        Note: -
+    </div>
+
+    <script src="index.js"> </script>
+</body>
+</html>
